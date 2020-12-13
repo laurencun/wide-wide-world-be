@@ -1,8 +1,8 @@
 # require 'faker'
 
-# User.delete_all
-# Post.delete_all
-# Comment.delete_all 
+User.delete_all
+Post.delete_all
+Comment.delete_all 
 
 User.create(username:'Lauren_Cun', password: 'password')
 User.create(username:'Trvlr24', password: '123456')
