@@ -2,7 +2,7 @@ class SavedsController < ApplicationController
 
     def index
         saveds = Saved.all 
-        render json: saveds 
+        render json: saveds,  include: [:post]
     end
 
     def create
