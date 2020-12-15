@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments
-  has_many :saveds
-  has_many :likes
+  has_many :comments, dependent: :delete_all
+  has_many :saveds, dependent: :delete_all
+  has_many :likes, dependent: :delete_all
 end
