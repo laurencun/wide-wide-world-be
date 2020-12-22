@@ -14,7 +14,7 @@ class SavedsController < ApplicationController
     private 
 
     def saved_params
-        params.require(:saved).permit(:user_id, :post_id)
+        params.permit(:user_id, :post_id)
     end
 
 end

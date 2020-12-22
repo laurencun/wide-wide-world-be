@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
     def index
         posts = Post.all 
-        render json: posts, include: [:comments, :likes, :user, :saveds]
+        render json: posts
     end
 
     def create
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-        params.require(:post).permit(:user_id, :image, :location, :caption)
+        params.permit(:image, :user_id, :location, :caption)
     end
 
 end

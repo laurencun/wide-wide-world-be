@@ -2,11 +2,10 @@ class LikesController < ApplicationController
 
     def index
         likes = Like.all 
-        render json: likes 
+        render json: likes
     end
 
     def create
-        # byebug
         like = Like.create(like_params)
         render json: like
     end
@@ -14,7 +13,7 @@ class LikesController < ApplicationController
     private 
 
     def like_params
-        params.require(:like).permit(:user_id, :post_id)
+        params.permit(:user_id, :post_id)
     end
 
 end

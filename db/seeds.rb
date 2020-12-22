@@ -10,46 +10,65 @@ User.create(username:'beyond_blu', password: 'jammies')
 User.create(username:'JayJones', password: 'jj22jj')
 User.create(username:'cindylouwho', password: 'alliswell')
 
-Post.create(user_id: 1, image:'https://images.pexels.com/photos/4194619/pexels-photo-4194619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Turkey', caption: 'Treating ourselves to some Turkish cafe staples.')
-Post.create(user_id: 1, image:'https://images.pexels.com/photos/3889756/pexels-photo-3889756.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Turkey', caption: 'Vacation starts now!')
-Post.create(user_id: 1, image:'https://images.pexels.com/photos/3889987/pexels-photo-3889987.jpeg?cs=srgb&dl=pexels-taryn-elliott-3889987.jpg&fm=jpg', 
-location:'Turkey', caption:'High on life. Balloon rides.')
-Post.create(user_id: 1, image:'https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'India', caption:'Chasing waterfalls in Pariyaram')
-Post.create(user_id: 3, image:'https://images.pexels.com/photos/2827374/pexels-photo-2827374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Morroco', caption:'Best way to start the day- enjoying the sunrise')
-Post.create(user_id: 1, image: 'https://images.pexels.com/photos/2174656/pexels-photo-2174656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'India', caption: 'Feeling adventurous.')
-Post.create(user_id: 3, image: 'https://images.pexels.com/photos/797724/pexels-photo-797724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Venezia, Italy', caption: 'Venezia has been wonderful.')
-Post.create(user_id: 3, image: 'https://images.pexels.com/photos/4514094/pexels-photo-4514094.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Venezia, Italy', caption: 'Maybe I will stay here forever...')
-Post.create(user_id: 3, image: 'https://images.pexels.com/photos/1580252/pexels-photo-1580252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Venezia, Italy', caption: 'This place is like a movie set.')
-Post.create(user_id: 3, image:'https://images.pexels.com/photos/3889843/pexels-photo-3889843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Morroco', caption:'If only everyday was like today...')
-Post.create(user_id: 4, image:'https://images.pexels.com/photos/2245436/pexels-photo-2245436.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Algeria', caption:"I'm not lost... you're lost.")
-Post.create(user_id: 4, image:'https://images.pexels.com/photos/3370324/pexels-photo-3370324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Athens, Greece', caption: 'Incredible place')
-Post.create(user_id: 4, image:'https://images.pexels.com/photos/2230346/pexels-photo-2230346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Lefkada, Greece', caption: 'I have no idea why there are not people here. Hidden gem?')
-Post.create(user_id: 5, image: 'https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Ao Nang, Thailand', caption: 'Boat ride anyone?')
-Post.create(user_id: 5, image: 'https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Tambon Khlong Sok, Thailand', caption: 'Greetings from Thailand!')
-Post.create(user_id: 5, image: 'https://images.pexels.com/photos/2106776/pexels-photo-2106776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Indonesia', caption: "Lovely Friday with fantastic weather.")
-Post.create(user_id: 5, image: 'https://images.pexels.com/photos/2082949/pexels-photo-2082949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Indonesia', caption: "Taking in nature.")
-Post.create(user_id: 5, image: 'https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Indonesia', caption: "Is this the gateway to heaven?!")
-Post.create(user_id: 5, image: 'https://images.pexels.com/photos/1122868/pexels-photo-1122868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Marga, Indonesia', caption: "So scary, yet somehow peaceful")
-Post.create(user_id: 2, image: 'https://images.pexels.com/photos/2272939/pexels-photo-2272939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-location:'Paris, France', caption: "Just made it to Paris this morning and I'm already in love.")
+post1 = Post.create(user_id: 1, location:'Turkey', caption: 'Treating ourselves to some Turkish cafe staples.')
+post1.image.attach(io:File.open('app/assets/turkish_cafe.jpeg'), filename:'turkish_cafe.jpeg', content_type: 'image/jpeg')
+
+post2 = Post.create(user_id: 1, location:'Turkey', caption: 'Vacation starts now!')
+post2.image.attach(io:File.open('app/assets/vacation.jpeg'), filename:'vacation.jpeg', content_type: 'image/jpeg')
+
+post3 = Post.create(user_id: 1, location:'Turkey', caption:'High on life. Balloon rides.')
+post3.image.attach(io:File.open('app/assets/balloon_ride.jpeg'), filename:'balloon_ride.jpeg', content_type: 'image/jpeg')
+
+post4 = Post.create(user_id: 1, location:'India', caption:'Chasing waterfalls in Pariyaram')
+post4.image.attach(io:File.open('app/assets/India_waterfall.jpeg'), filename:'India_waterfall.jpeg', content_type: 'image/jpeg')
+
+post5 = Post.create(user_id: 3,  location:'Morroco', caption:'Best way to start the day- enjoying the sunrise')
+post5.image.attach(io:File.open('app/assets/Morrocco_morning.jpeg'), filename:'Morrocco_morning.jpeg', content_type: 'image/jpeg')
+
+post6 = Post.create(user_id: 1,  location:'India', caption: 'Feeling adventurous.')
+post6.image.attach(io:File.open('app/assets/India_adventure.jpeg'), filename:'India_adventure.jpeg', content_type: 'image/jpeg')
+
+post7 = Post.create(user_id: 3, location:'Venezia, Italy', caption: 'Venezia has been wonderful.')
+post7.image.attach(io:File.open('app/assets/Venezia_Italy.jpeg'), filename:'Venezia_Italy.jpeg', content_type: 'image/jpeg')
+
+post8 = Post.create(user_id: 3, location:'Venezia, Italy', caption: 'Maybe I will stay here forever...')
+post8.image.attach(io:File.open('app/assets/Venezia2.jpeg'), filename:'Venezia2.jpeg', content_type: 'image/jpeg')
+
+post9 = Post.create(user_id: 3, location:'Venezia, Italy', caption: 'This place is like a movie set.')
+post9.image.attach(io:File.open('app/assets/Venezia3.jpeg'), filename:'Venezia3.jpeg', content_type: 'image/jpeg')
+
+post10 = Post.create(user_id: 3, location:'Morroco', caption:'If only everyday was like today...')
+post10.image.attach(io:File.open('app/assets/Morrocco_pool.jpeg'), filename:'Morrocco_pool.jpeg', content_type: 'image/jpeg')
+
+post11 = Post.create(user_id: 4, location:'Algeria', caption:"I'm not lost... you're lost.")
+post11.image.attach(io:File.open('app/assets/lost_algeria.jpeg'), filename:'lost_algeria.jpeg', content_type: 'image/jpeg')
+
+post12 = Post.create(user_id: 4, location:'Athens, Greece', caption: 'Incredible place')
+post12.image.attach(io:File.open('app/assets/athens.jpeg'), filename:'athens.jpeg', content_type: 'image/jpeg')
+
+post13 = Post.create(user_id: 4, location:'Lefkada, Greece', caption: 'I have no idea why there are not people here. Hidden gem?')
+post13.image.attach(io:File.open('app/assets/lefkada_greece.jpeg'), filename:'lefkada_greece.jpeg', content_type: 'image/jpeg')
+
+post14 = Post.create(user_id:5, location:'Ao Nang, Thailand', caption: 'Boat ride anyone?')
+post14.image.attach(io:File.open('app/assets/boat_ride.jpeg'), filename:'boat_ride.jpeg', content_type: 'image/jpeg')
+
+post15 = Post.create(user_id: 5, location:'Tambon Khlong Sok, Thailand', caption: 'Greetings from Thailand!')
+post15.image.attach(io:File.open('app/assets/thailand_greeting.jpeg'), filename:'thailand_greeting.jpeg', content_type: 'image/jpeg')
+
+post16 = Post.create(user_id: 5, location:'Indonesia', caption: "Lovely Friday with fantastic weather.")
+post16.image.attach(io:File.open('app/assets/indo_friday.jpeg'), filename:'indo_friday.jpeg', content_type: 'image/jpeg')
+
+post17 = Post.create(user_id: 5, location:'Indonesia', caption: "Taking in nature.")
+post17.image.attach(io:File.open('app/assets/indo_nature.jpeg'), filename:'indo_nature.jpeg', content_type: 'image/jpeg')
+
+post18 = Post.create(user_id: 5, location:'Indonesia', caption: "Is this the gateway to heaven?!")
+post18.image.attach(io:File.open('app/assets/gateway.jpeg'), filename:'gateway.jpeg', content_type: 'image/jpeg')
+
+post19 =  Post.create(user_id: 5, location:'Marga, Indonesia', caption: "So scary, yet somehow peaceful")
+post19.image.attach(io:File.open('app/assets/scary_swing.jpeg'), filename:'scary_swing.jpeg', content_type: 'image/jpeg')
+
+post20 = Post.create(user_id: 2, location:'Paris, France', caption: "Just made it to Paris this morning and I'm already in love.")
+post20.image.attach(io:File.open('app/assets/paris.jpeg'), filename:'paris.jpeg', content_type: 'image/jpeg')
 
 
 Comment.create(user_id: 1, post_id: 5, content:'Wow, I would love to see that in person.')
