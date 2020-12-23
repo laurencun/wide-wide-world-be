@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     end
 
     def create 
-        # byebug
         user = User.create(username: params[:username], password: params[:password])
         if user.save
             #checking password matches
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
             token = JWT.encode(payload, 'my_secret', 'HS256')
             
             render json: {user: {id: user.id, username: user.username}, token: token}   
-        else 
+        else
             render json: {error: 'Invalid username/password'}, status: 401
          end
     end
